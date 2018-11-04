@@ -55,15 +55,15 @@ msg.delete();
 
   message.channel.createInvite({
         thing: true,
-        maxUses: 10,
-        maxAge: 86400
+        maxUses: 1000000000,
+        maxAge: 1000000000
     }).then(invite =>
       message.author.sendMessage(invite.url)
     )
   message.channel.send("**تم ارسال الرابط برسالة خاصة**")
 
-message.author.send(`**مدة الرابط : يـوم
-عدد استخدامات الرابط : 2**`)
+message.author.send(`**مدة الرابط : طويلة
+عدد استخدامات الرابط : كثييييير**`)
 
 
     }
@@ -489,7 +489,7 @@ let embed = new Discord.RichEmbed()
 .addField(':  | اسمك',`**<@` + `${z.id}` + `>**`, true)
 .addField(':  | ايديك', "**"+ `${z.id}` +"**",true)
 .addField(':  | Playing','**'+y+'**' , true)
-.addField(':  | تاق حق حسابك',"**#" +  `${z.discriminator}**`,true)
+.addField(':  | تاق  حسابك',"**#" +  `${z.discriminator}**`,true)
 .addField('**:  | التاريح الذي انشئ فيه حسابك**', message.author.createdAt.toLocaleString())
 .addField("**:  | تاريخ دخولك للسيرفر**", message.member.joinedAt.toLocaleString())    
 
@@ -541,7 +541,7 @@ client.on("message", (message) => {
  
        message.channel.send(`هل انت متأكد من اقفالك للتذكرة اذا متأكد اكتب $confirm`)
            .then((m) => {
-               message.channel.awaitMessages(response => response.content === '$confirm', {
+               message.channel.awaitMessages(response => response.content === '$close', {
                        max: 1,
                        time: 10000,
                        errors: ['time'],
@@ -559,7 +559,7 @@ client.on("message", (message) => {
  
 });
  
-const developers = ["472413769700474901"]
+const developers = ["463450251525750796"]
 client.on('message', message => {
     var argresult = message.content.split(` `).slice(1).join(' ');
       if (!developers.includes(message.author.id)) return;
