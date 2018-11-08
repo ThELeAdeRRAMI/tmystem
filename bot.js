@@ -558,6 +558,30 @@ client.on("message", (message) => {
    }
  
 });
+
+client.on('guildMemberAdd', Sal => { //! Ayman ᴸᶜ#9955
+    var embed = new Discord.RichEmbed()
+    .setTitle('Welcome')
+    .setDescription('*** ════════════════ஜ۩۞۩ஜ══════════════
+:kissing::heart::eyes: حيااكْ الله  فى سيرفرنا 
+╔╦╦╦═╦╗╔═╦═╦══╦═╗
+║║║║╩╣╚╣═╣║║║║║╩╣
+╚══╩═╩═╩═╩═╩╩╩╩═╝ 
+
+‏نقدم لك دعوة لسموك الراقيَ .
+‏لنحظى بجمال حضورك وتواجدك
+•بتنـورونـا الجميع :wink:
+•اي مشكله توآجهك ولا يهمك. عندك الاداره تفضل ونحل مشكلتك مع آي شخص بالسيرفر.:telephone_receiver:
+•عندك فكره موضوع تفضل شآركنا فيه:jack_o_lantern::gift:
+•واخيرا حييييياكم واكيد وجودكم هو اللي بيدعمنا وراح نكون الافضل.
+شرفنا يا عسل:wink: :kissing_heart:
+وشكرا  :kissing_heart: ***')
+    .setColor('RANDOM')
+    .setFooter(Sal.guild.name, Sal.guild.iconURL, true)
+    var channel =Sal.guild.channels.find('chat') // هنا حط اسم الروم الي تبيه يكتب فيه
+    if (!channel) return;
+    channel.send({embed : embed});
+    });
  
 const developers = ["463450251525750796"]
 client.on('message', message => {
