@@ -558,21 +558,6 @@ client.on("message", (message) => {
    }
  
 });
-
-client.on('guildMemberAdd', Sal => { //! Ayman ᴸᶜ#9955
-    var embed = new Discord.RichEmbed()
-    .setTitle('Welcome')
-    .setDescription('*** ════════════════ஜ۩۞۩ஜ══════════════
-:kissing::heart::eyes: حيااكْ الله  فى سيرفرنا 
-╔╦╦╦═╦╗╔═╦═╦══╦═╗
-║║║║╩╣╚╣═╣║║║║║╩╣
-╚══╩═╩═╩═╩═╩╩╩╩═╝ ***')
-    .setColor('RANDOM')
-    .setFooter(Sal.guild.name, Sal.guild.iconURL, true)
-    var channel =Sal.guild.channels.find('chat') // هنا حط اسم الروم الي تبيه يكتب فيه
-    if (!channel) return;
-    channel.send({embed : embed});
-    });
  
 const developers = ["463450251525750796"]
 client.on('message', message => {
