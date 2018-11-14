@@ -605,5 +605,8 @@ client.on("message", message => {
       message.channel.send(`:ballot_box_with_check: TemporarySound : \`${nam}\``).then(c => setTimeout(() => c.edit(`<@${message.author.id}> :stopwatch:  انتهى وقت الروم الصوتي`), 120000))  // 120000 دقيقتان
     }
     });
+client.on('guildMemberAdd', member=> {
+    member.addRole(member.guild.roles.find("name","- TM Member"));
+    });
  
 client.login(process.env.BOT_TOKEN);// لا تغير فيها شيء
