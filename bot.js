@@ -608,5 +608,21 @@ client.on("message", message => {
 client.on('guildMemberAdd', member=> {
     member.addRole(member.guild.roles.find("name","- TM Member"));
     });
+
+client.on('message', msg => {
+ if(msg.content === "$bot") {
+let embed24 = new Discord.RichEmbed()   
+   .setThumbnail(client.user.avatarURL)
+   .setColor("RANDOM")  
+   .setTitle(`🤖**Information about**🤖 || ${client.user.tag}`, true)
+   .addField("📜**Name + Tag**📜", client.user.tag, true)
+   .addField("🤖**Bot Join Servers**🤖", client.guilds.size, true)
+   .addField("👥**Sender**👥", msg.author.tag, true)
+   .addField("🤖:id: *Bot ID** :id:🤖 ", client.user.id, true)
+   .addField("🤖**User**🤖", client.users.size, true)
+   .setFooter(`${msg.author.tag}`, `${msg.author.avatarURL}`, true)
+msg.channel.sendEmbed(embed24)
+}
+ });
  
 client.login(process.env.BOT_TOKEN);// لا تغير فيها شيء
