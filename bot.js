@@ -605,5 +605,48 @@ client.on("message", message => {
       message.channel.send(`:ballot_box_with_check: TemporarySound : \`${nam}\``).then(c => setTimeout(() => c.edit(`<@${message.author.id}> :stopwatch:  انتهى وقت الروم الصوتي`), 120000))  // 120000 دقيقتان
     }
     });
+	var moment = require("moment");
+client.on('message', message => {
+if(message.author.bot) return;
+  var prefix = '$'; // البريفكس
+  
+  if (message.content.startsWith(prefix + "id")) { // الامر
+      message.react("🆔") 
+  if(!message.channel.guild) return message.reply(`**__بس بالسيرفرات__**`);
+   message.guild.fetchInvites().then(invs => {
+      let member = client.guilds.get(message.guild.id).members.get(message.author.id);
+      let personalInvites = invs.filter(i => i.inviter.id === message.author.id);
+      let inviteCount = personalInvites.reduce((p, v) => v.uses + p, 0);
+      var moment = require('moment');
+      var args = message.content.split(" ").slice(1);
+let user = message.mentions.users.first();
+var men = message.mentions.users.first();
+ var heg;
+ if(men) {
+     heg = men
+ } else {
+     heg = message.author
+ }
+var mentionned = message.mentions.members.first();
+  var h;
+ if(mentionned) {
+     h = mentionned
+ } else {
+     h = message.member
+ }
+moment.locale('ar-TN');
+      var id = new  Discord.RichEmbed()
+    .setColor("!0a0909")
+    .setAuthor(message.author.username, message.author.avatarURL) 
+.addField('**تاريخ دخولك الدسكورد**:', `${moment(heg.createdTimestamp).format('YYYY/M/D HH:mm:ss')} **\n** \`${moment(heg.createdTimestamp).fromNow()}\`` ,true) 
+.addField('**تاريخ دخولك السيرفر**:', `${moment(h.joinedAt).format('YYYY/M/D HH:mm:ss')} \n \`${moment(h.joinedAt).fromNow()}\``, true)
+.addField("**اسمك**", `${message.author.username}`)
+.addField('**تاقك**', message.author.discriminator)
+.addField('**ايديك**', message.author.id)
+.setFooter("『معلوماتك』")  
+    message.channel.sendEmbed(id);
+})
+}       
+});
  
 client.login(process.env.BOT_TOKEN);// لا تغير فيها شيء
