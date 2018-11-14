@@ -837,4 +837,148 @@ client.on('message',message =>{
     }
   });
 
+client.on('message', msg => {
+  if (msg.content === 'فلسطين') {      
+    msg.channel.send(":flag_ps:")
+  }
+});
+
+client.on('message', msg => {
+  if (msg.content === 'السعودية') {      
+    msg.channel.send(":flag_sa:")
+  }
+});
+
+client.on('message', msg => {
+  if (msg.content === 'مصر') {      
+    msg.channel.send(":flag_eg:")
+  }
+});
+
+client.on('message', msg => {
+  if (msg.content === 'المغرب') {      
+    msg.channel.send(":flag_ma:")
+  }
+});
+
+client.on('message', msg => {
+  if (msg.content === 'العراق') {      
+    msg.channel.send(":flag_iq:")
+  }
+});
+
+client.on('message', msg => {
+  if (msg.content === 'الجزائر') {      
+    msg.channel.send(":flag_dz:")
+  }
+});
+
+client.on('message', msg => {
+  if (msg.content === 'الامارات') {      
+    msg.channel.send(":flag_ae:")
+  }
+});
+
+client.on('message', msg => {
+  if (msg.content === 'تونس') {      
+    msg.channel.send(":flag_tn:")
+  }
+});
+
+client.on('message', msg => {
+  if (msg.content === 'سوريا') {      
+    msg.channel.send(":flag_sy:")
+  }
+});
+
+client.on('message', msg => {
+  if (msg.content === 'ليبيا') {      
+    msg.channel.send(":flag_ly:")
+  }
+});
+
+client.on('message', msg => {
+  if (msg.content === 'قطر') {      
+    msg.channel.send(":flag_qa:")
+  }
+});
+
+client.on('message', msg => {
+  if (msg.content === 'الصومال') {      
+    msg.channel.send(":flag_so:")
+  }
+});
+
+client.on('message', msg => {
+  if (msg.content === 'عمان') {      
+    msg.channel.send(":flag_om:")
+  }
+});
+
+client.on('message', msg => {
+  if (msg.content === 'موريتانيا') {      
+    msg.channel.send(":flag_mr:")
+  }
+});
+
+client.on('message', msg => {
+  if (msg.content === 'الاردن') {      
+    msg.channel.send(":flag_jo:")
+  }
+});
+
+client.on('message', msg => {
+  if (msg.content === 'البحرين') {
+    msg.channel.send(":flag_bh:")
+  }
+});
+
+client.on('message', msg => {
+  if (msg.content === 'الكويت') {
+    msg.channel.send(":flag_kw:")
+  }
+});
+
+client.on('message', msg => {
+  if (msg.content === 'الكلاب') {
+    msg.channel.send(":flag_il:")
+  }
+});
+
+client.on('message', msg => {
+  if (msg.content === 'تركيا') {
+    msg.channel.send(":flag_tr:")
+  }
+});
+
+client.on('message', msg => {
+  if (msg.content === 'امريكا') {
+    msg.channel.send(":flag_us:")
+  }
+});
+
+client.on('message', msg => {
+  if (msg.content === 'كندا') {
+    msg.channel.send(":flag_ca:")
+  }
+});
+
+client.on('message', msg => {
+  if (msg.content === 'اليمن') {
+    msg.channel.send(":flag_ye:")
+  }
+});
+
+client.on('message', msg => {
+  if (msg.content === 'البرازيل') {
+    msg.channel.send(":flag_br:")
+  }
+});
+
+client.on('message', msg => {
+  if (msg.content === 'فرنسا') {
+    msg.channel.send(":flag_fr:")
+  }
+});
+
 client.login(process.env.BOT_TOKEN);// لا تغير فيها شيء
