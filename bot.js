@@ -537,7 +537,7 @@ client.on("message", (message) => {
  
  
   if (message.content.startsWith("$close")) {
-        if (!message.channel.name.startsWith(`Ticket-`)) return message.channel.send(`You can't use the close command outside of a ticket channel.`);
+        if (!message.channel.name.startsWith(`ticket-`)) return message.channel.send(`You can't use the close command outside of a ticket channel.`);
  
        message.channel.send(`*** مرة اخرى لاغلاق الروم $close اكتب ***`)
            .then((m) => {
