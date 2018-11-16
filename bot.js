@@ -1048,4 +1048,31 @@ msg.channel.sendEmbed(embed24)
 }
  });
 
+const child_process = require("child_process");
+const adminprefix = "$";
+const devs = ['463450251525750796'];
+
+client.on('message', message => {
+if(message.content === adminprefix + "restart") { // الامر
+      if (!devs.includes(message.author.id)) return;
+          message.channel.send(`⚠️ **الشخص الذي اعاد تشغيل البوت ${message.author.username}**`);
+        console.log(`⚠️ جاري اعادة تشغيل البوت... ⚠️`);
+        client.destroy();
+        child_process.fork(__dirname + "bot.js");
+        console.log(`تم اعادة تشغيل البوت`);
+    }
+  
+  });
+
+client.on('guildMemberAdd', member => {
+  member.guild.fetchInvites().then(guildInvites => {
+    const ei = invites[member.guild.id];
+    const invite = guildInvites.find(i => ei.get(i.code).uses < i.uses);
+    const inviter = client.users.get(invite.inviter.id);
+    const stewart = member.guild.channels.find("name", "welcome");
+     stewart.send(`<@${member.user.id}> تمت الدعوه من <@${inviter.id}>`);
+   //  stewart.send(`<@${member.user.id}> joined using invite code ${invite.code} from <@${inviter.id}>. Invite was used ${invite.uses} times since its creation.`);
+  }); 
+});
+
 client.login(process.env.BOT_TOKEN);// لا تغير فيها شيء
