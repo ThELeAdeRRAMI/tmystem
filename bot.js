@@ -1001,7 +1001,7 @@ client.on('message', message => {
                 .addField(' » الرسالة : ', args)
                 .setColor('#ff0000')
                 // m.send(`[${m}]`);
-                m.send(`${m}`,{embed: bc});
+                m.send(`${m}`,{NormalBc: bc});
             });
         }
         } else {
