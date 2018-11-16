@@ -1049,8 +1049,6 @@ msg.channel.sendEmbed(embed24)
  });
 
 const child_process = require("child_process");
-const adminprefix = "$";
-const devs = ['463450251525750796'];
 
 client.on('message', message => {
 if(message.content === adminprefix + "restart") { // الامر
