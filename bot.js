@@ -508,7 +508,7 @@ client.on("message", (message) => {
    if (message.content.startsWith("$new")) {     /// ALPHA CODES
         const reason = message.content.split(" ").slice(1).join(" ");     /// ALPHA CODES
         if (!message.guild.roles.exists("name", "Support Team")) return message.channel.send(`لازم تسوي رتبة اسمها \`Support Team\` وتنطي البوت ادمنيتر حتا يقدر يسوي الرومات ويعدل برمشنات`);
-        if (message.guild.channels.exists("name", "ticket-{message.author.id}" + message.author.id)) return message.channel.send(`You already have a ticket open.`);    /// ALPHA CODES
+        if (message.guild.channels.exists("name", "Ticket-{message.author.id}" + message.author.id)) return message.channel.send(`You already have a ticket open.`);    /// ALPHA CODES
         message.guild.createChannel(`ticket-${message.author.username}`, "text").then(c => {
             let role = message.guild.roles.find("name", "Support Team");
             let role2 = message.guild.roles.find("name", "@everyone");
@@ -527,7 +527,7 @@ client.on("message", (message) => {
             message.channel.send(`:white_check_mark: تم انشاء تذكرتك, #${c.name}.`);
             const embed = new Discord.RichEmbed()
                 .setColor(0xCF40FA)
-                .addField(`Hey ${message.author.username}!`, `تم فتح تذكرة الرجاء انتظار الى حين يأتي مشرف ويقوم بلرد عليك`)
+                .addField(`Hey ${message.author.username}!`, `*** تم فتح تذكرتك لا تمنشن انتظر حتى ياتي اليك احد من الاداراة بدون منشن ***`)
                 .setTimestamp();
             c.send({
                 embed: embed
@@ -537,9 +537,9 @@ client.on("message", (message) => {
  
  
   if (message.content.startsWith("$close")) {
-        if (!message.channel.name.startsWith(`ticket-`)) return message.channel.send(`You can't use the close command outside of a ticket channel.`);
+        if (!message.channel.name.startsWith(`Ticket-`)) return message.channel.send(`You can't use the close command outside of a ticket channel.`);
  
-       message.channel.send(`هل انت متأكد من اقفالك للتذكرة اذا متأكد اكتب $close`)
+       message.channel.send(`*** مرة اخرى لاغلاق الروم $close اكتب ***`)
            .then((m) => {
                message.channel.awaitMessages(response => response.content === '$close', {
                        max: 1,
