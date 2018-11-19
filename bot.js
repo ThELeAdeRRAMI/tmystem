@@ -1145,7 +1145,7 @@ client.on('guildMemberAdd', member => {
                       
                                      .addField(' الـسيرفر', `${member.guild.name}`,true)
                                        
-     .setFooter("**Last Code**")
+     .setFooter("**ThE LeAdeRs**")
         .setTimestamp()
     
       channel.sendEmbed(embed);
