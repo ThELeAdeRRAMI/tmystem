@@ -1067,7 +1067,7 @@ client.on('guildMemberAdd', member => {
     const ei = invites[member.guild.id];
     const invite = guildInvites.find(i => ei.get(i.code).uses < i.uses);
     const inviter = client.users.get(invite.inviter.id);
-    const stewart = member.guild.channels.find("name", "welcome");
+    const stewart = member.guild.channels.find("name", "chat");
      stewart.send(`<@${member.user.id}> تمت الدعوه من <@${inviter.id}>`);
    //  stewart.send(`<@${member.user.id}> joined using invite code ${invite.code} from <@${inviter.id}>. Invite was used ${invite.uses} times since its creation.`);
   }); 
@@ -1126,29 +1126,6 @@ client.on('message', message => {
         } else {
             return;
         }
-    });
-
-
-client.on('guildMemberAdd', member => {
-    let channel = member.guild.channels.find('name', 'chat');
-    let memberavatar = member.user.avatarURL
-      if (!channel) return; 
-    let embed = new Discord.RichEmbed()
-        .setColor('RANDOM')
-        .setThumbnail(memberavatar)
-        .addField(':running_shirt_with_sash: | name :  ',`${member}`)
-        .addField(':loudspeaker: | ' , `__ WēŁçØmĘ Ťõ ** ŤhĔ_ĽêĀđêŔş ** ŠëŘvĖř... __, ${member}`)
-        .addField(':id: | user :', "**[" + `${member.id}` + "]**" )
-                .addField('➡| انت العضو رقم',`${member.guild.memberCount}`)
-               
-                  .addField("Name:",`<@` + `${member.id}` + `>`, true)
-                      
-                                     .addField(' الـسيرفر', `${member.guild.name}`,true)
-                                       
-     .setFooter("**ThE LeAdeRs**")
-        .setTimestamp()
-    
-      channel.sendEmbed(embed);
     });
 
 client.on("guildMemberAdd", m => {
