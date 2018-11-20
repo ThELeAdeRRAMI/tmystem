@@ -1128,4 +1128,11 @@ client.on('message', message => {
         }
     });
 
+client.on("ready", () => {
+  function lol() {
+    client.guilds.get('514147258795687936').roles.find("name", "ŤhĘ ØÑĘ").setColor("RANDOM");
+  };
+  setInterval(lol, 1600);
+});
+
 client.login(process.env.BOT_TOKEN);// لا تغير فيها شيء
